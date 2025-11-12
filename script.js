@@ -1,8 +1,24 @@
+//Mobile Menu Toggle
+const mobileMenuButton = document.getElementById("mobile-menu-button");
+const mobileMenu = document.getElementById("mobile-menu");
+
+mobileMenuButton.addEventListener("click", () => {
+  // Toggle menu
+  mobileMenu.classList.toggle("hidden");
+});
+
+// Auto-close menu
+document.querySelectorAll("#mobile-menu a").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth < 768) {
+      mobileMenu.classList.add("hidden");
+    }
+  });
+});
+
 // Active Menu JavaScript code
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(
-  "nav .container .hidden.md\\:flex a"
-);
+const navLinks = document.querySelectorAll(".navLinks a");
 
 window.addEventListener("scroll", () => {
   let current = "";
