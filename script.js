@@ -31,7 +31,7 @@ window.addEventListener("scroll", () => {
       window.pageYOffset >= sectionTop &&
       window.pageYOffset < sectionTop + sectionHeight
     ) {
-      current = section.getAttribute("id"); // Get the section's id (e.g., "home", "products")
+      current = section.getAttribute("id");
     }
   });
 
@@ -40,8 +40,7 @@ window.addEventListener("scroll", () => {
     link.classList.remove("text-blue-500", "after:scale-x-100");
     link.classList.add("text-gray-600", "after:scale-x-0");
 
-    // Add active state to current section
-    // Compare link's href="#home" with current section id="home"
+    // Compare link #home with current section id="home"
     if (link.getAttribute("href") === `#${current}`) {
       link.classList.remove("text-gray-600", "after:scale-x-0");
       link.classList.add("text-blue-500", "after:scale-x-100");
@@ -97,7 +96,7 @@ const searchProducts = () => {
 const displayCard = document.getElementById("display-card");
 
 // Function to show products
-let cart = {}; // Store product quantities
+let cart = {}; // Store how many prduct selected
 
 const showDetails = (products) => {
   displayCard.innerHTML = ""; // Clear previous content
@@ -261,13 +260,13 @@ addBtn.addEventListener("click", () => {
 updateBalanceDisplay();
 // ------------------------------------------------------------------------------------------------------
 //sorting code
-let productsData = []; // global variable to store products
+let productsData = []; // to store products
 
 const searchProductsForSort = () => {
   fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
     .then((data) => {
-      productsData = data; // store products globally
+      productsData = data; // store products
       showDetails(productsData);
     });
 };
@@ -423,7 +422,7 @@ searchProductsForSort();
 setTimeout(setupCartButtons, 1000);
 // ------
 // Proceed to Checkout button
-const checkoutBtn = document.getElementById("checkoutBtn"); // Make sure your button has this ID
+const checkoutBtn = document.getElementById("checkoutBtn");
 
 checkoutBtn.addEventListener("click", () => {
   if (summary.total <= 0) {
@@ -432,8 +431,8 @@ checkoutBtn.addEventListener("click", () => {
   }
 
   if (userBalance >= summary.total) {
-    userBalance -= summary.total; // Deduct from wallet
-    updateBalanceDisplay(); // Update wallet display
+    userBalance -= summary.total; // balance minus from wallet
+    updateBalanceDisplay(); // Update wallet & display
     alert("Payment successful!");
     userCart = {}; // Clear cart after checkout
     updateSummary(); // Reset order summary
