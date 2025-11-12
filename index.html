@@ -9,47 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @keyframes next1 {
-        from {
-          left: 0%;
-        }
-        to {
-          left: -100%;
-        }
-      }
 
-      @keyframes next2 {
-        from {
-          left: 100%;
-        }
-        to {
-          left: 0%;
-        }
-      }
-
-      @keyframes prev1 {
-        from {
-          left: 0%;
-        }
-        to {
-          left: 100%;
-        }
-      }
-
-      @keyframes prev2 {
-        from {
-          left: -100%;
-        }
-        to {
-          left: 0%;
-        }
-      }
-
-      .img {
-        position: absolute;
-      }
-    </style>
     <title>SuperMart - Your Smart Shopping</title>
   </head>
   <body class="bg-gray-50">
@@ -109,7 +69,9 @@
                 <span class="wallet-balance font-medium">1000 BDT</span>
               </div>
               <div class="card-icon relative mr-4">
-                <i class="fas fa-shopping-cart text-gray-700 text-xl"></i>
+                <a href="#order-summary"
+                  ><i class="fas fa-shopping-cart text-gray-700 text-xl"></i
+                ></a>
               </div>
               <button id="mobile-menu-button" class="text-gray-700">
                 <i class="fas fa-bars text-xl"></i>
