@@ -283,7 +283,8 @@ sortSelect.addEventListener("change", () => {
     sortedProducts.sort((a, b) => b.price - a.price);
   }
 
-  showDetails(sortedProducts); // render sorted products
+  showDetails(sortedProducts);// render sorted products
+  setupCartButtons();
 });
 
 searchProductsForSort(); // fetch and display products initially
@@ -443,3 +444,4 @@ checkoutBtn.addEventListener("click", () => {
     alert("Not enough balance in your wallet!");
   }
 });
+
